@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'pushing image to dockerhub'
         sh 'docker tag wordsmithwebimage pheyishayor001/wordsmithwebimage'
-        sh 'docker login -u="pheyishayor001" -p="simplepass"'
+        sh 'docker login -u="gevala" -p="675955161-Dcg"'
         sh 'docker push pheyishayor001/wordsmithwebimage'
       }
     }
