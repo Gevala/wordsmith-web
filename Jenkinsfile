@@ -12,11 +12,18 @@ pipeline {
             '''
       }
     }
-    stage('Push')  {
+    stage('Push to nexus')  {
       steps {
-        echo 'pushing image to dockerhub'
+        echo 'pushing to nexus'
       }
     }
+    
+    stage('build in docker')  {
+      steps {
+        echo 'pushing to nexus'
+        sh 'docker build -t wordsmithweb . '
+      }
+    } 
     stage('Deploy') {
       steps {
         echo 'Deploying the application'
